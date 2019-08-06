@@ -1,0 +1,51 @@
+1. Explain why problem formulation must follow goal formulation.
+
+2. Your goal is to navigate a robot out of a maze. The robot starts in the center
+of the maze facing north. You can turn the robot to face north, east, south, or
+west. You can direct the robot to move forward a certain distance, although
+it will stop before hitting a wall.
+
+  (a) Formulate this problem. How large is the state space?
+  (b) IN navtigating a maze, the only place we need to turn is at the 
+  intersection of two or more corridors. Reformulate this problem using this
+  observation. How large is the state space now?
+  (c) From each point in the maze, we can move in any of the four directions until
+  we reach a turning point, and this is the only action we need to do. 
+  Reformulate the problem using these actions. Do we need to keep track of the 
+  robot's orientation now?
+  (d) In ou=r initial description of the problem we already abstracted from
+  the real world, restricting actions and removing details. List three such
+  simplifications we made.
+  
+7. Consider the problem of finding the shortest path between two points on a 
+plane that has convex polygonal obstacles as shown in Figure 31. This is an 
+idealization of the problem that a robot has to solve to navigate in a 
+crowded environment.
+
+  (a) Suppose the state space consists of all positions (x, y) in the plane. 
+  How many states are there? How many paths are there to the goal?
+  (b) Explain briefly why the shortest path from polygon vertex to any other
+  in the scene must consist of straight-line segments joining some of the vertices
+  of the polygons. Define a good state space now. How large is the state space?
+  (c) Define the necessary function to implemen the search problem, including an
+  ACTIONS function that takes a vertex as input and returns a set of vectors, 
+  each of which maps the current vertex to one of the vertices that can be
+  reached in a straight line. (Do not forget the neighbours of the polygon.) Use
+  the straight-line distance for the heuristic function.
+  (d) Apply one or more of the algorithms in this chapter to solve a range of
+  problems in the domain, and comment on their performance.
+  
+9. The missionaries and cannibals problem is usually stated as follows. Three
+missionaries and three cannibals are on one side of a river, along with a boat
+that can hold one or two people. Find a way to get everyone to the other side
+without ever leaving a group of missionaries in one place outnumbered by the 
+cannibals in that place. This problem is famous in AI because is was the subject
+of the first paper that approached problem formulation from an analytical
+viewpoint (Amarel, 1968).
+
+  (a) Formulate the problem precisely, making only those distinctions necessary
+  to ensure a valid solution. Draw a diagram of the complete state space.
+  (b) Implement and solve the problem optimally using an appropriate search
+  algorithm. Is it a good idea to check for repeated states?
+  (c) Why do you think people have a hard time solving this puzzle, given that
+  the state space is so simple?
