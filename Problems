@@ -6,14 +6,14 @@ west. You can direct the robot to move forward a certain distance, although
 it will stop before hitting a wall.
 
   (a) Formulate this problem. How large is the state space?
-  (b) IN navtigating a maze, the only place we need to turn is at the 
+  (b) In navigating a maze, the only place we need to turn is at the 
   intersection of two or more corridors. Reformulate this problem using this
   observation. How large is the state space now?
   (c) From each point in the maze, we can move in any of the four directions until
   we reach a turning point, and this is the only action we need to do. 
   Reformulate the problem using these actions. Do we need to keep track of the 
   robot's orientation now?
-  (d) In ou=r initial description of the problem we already abstracted from
+  (d) In our initial description of the problem we already abstracted from
   the real world, restricting actions and removing details. List three such
   simplifications we made.
   
@@ -27,7 +27,7 @@ crowded environment.
   (b) Explain briefly why the shortest path from polygon vertex to any other
   in the scene must consist of straight-line segments joining some of the vertices
   of the polygons. Define a good state space now. How large is the state space?
-  (c) Define the necessary function to implemen the search problem, including an
+  (c) Define the necessary function to implement the search problem, including an
   ACTIONS function that takes a vertex as input and returns a set of vectors, 
   each of which maps the current vertex to one of the vertices that can be
   reached in a straight line. (Do not forget the neighbours of the polygon.) Use
