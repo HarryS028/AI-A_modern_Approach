@@ -13,7 +13,7 @@
 */
 
 var chord = [[1,1], [2,2]];
-var test_line = [[2,3], [3,5]];
+var test_line = [[1,2], [2,1]];
 
 
 function intersection_check (chord, test_line) {
