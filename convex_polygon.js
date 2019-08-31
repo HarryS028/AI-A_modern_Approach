@@ -18,22 +18,23 @@ var test_line = [[2,3], [3,5]];
 
 function intersection_check (chord, test_line) {
    var intersection;
-   var I1 = [Math.min(chord[0][0],chord[1][0]),
-      Math.max(chord[0][0],chord[1][0])];
-   var I2 = [Math.min(test_line[0][0],test_line[1][0]),
-      Math.max(test_line[0][0],test_line[1][0])];
-   
+   /*In addition to this, you may check at startup that two of the four provided points
+   are not equals to avoid all that testing.*/
+   //Define variables
+   var x1 = chord[0][0]; var x2 = chord[1][0];
+   var y1 = chord[0][1]; var y2 = chord[1][1];
+   var x3 = test_line[0][0]; var x4 = test_line[1][0];
+   var y3 = test_line[0][1]; var y4 = test_line[1][1];
+ 
    //Quick check in x-direction for intersection.     
-   if (Math.max(chord[0][0],chord[1][0]) < 
-      Math.min(test_line[0][0],test_line[1][0])) {
+   if (Math.max(x1,x2) < Math.min(x3,x4)) {
          intersection = 0;
       }                  
   
-  var A1 = (chord[0][1]-chord[1][1])/(chord[0][0]-chord[1][0]);
-  var A2 = (test_line[0][1]-test_line[1][1])/(test_line[0][0]-test_line[1][0]);
-  var b1 = chord[0][1] - (A1*chord[0][0]);
-  var b2 = test_line[0][1] - (A2*test_line[0][0]);
-  
+  var A1 = (y1-y2)/(x1-x2);
+  var A2 = (y3-y4)/(x3-x4);
+  var b1 = y1 - (A1*x1);
+  var b2 = y3 - (A2*x3);
   var Xi = (b1 - b2)/(A1 - A2);
   
   //Check if line segments are parallel.
@@ -41,20 +42,12 @@ function intersection_check (chord, test_line) {
      intersection = 0;
   }
  
-  if(Xi<Math.max(Math.min(chord[0][0],chord[1][0]),Math.min(test_line[0][0],test_line[1][0]))) {
+  if( Xi<Math.max(Math.min(x1,x2),Math.min(x3,x4)) ||
+      Xi>Math.min(Math.max(x1,x2),Math.max(x3,x4)) ) {
      intersection = 0;
   } else {
      intersection = 1;
   }
-  
-  /*
-  if ( (Xa < max( min(X1,X2), min(X3,X4) )) ||
-     (Xa > min( max(X1,X2), max(X3,X4) )) )
-    return false; // intersection is out of bound
-else
-    return true;
-  */
-  
   
 return intersection;  
 }
