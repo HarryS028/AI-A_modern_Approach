@@ -7,7 +7,7 @@ Initial state: All agents begin in set A.
 Cost function: 1 per action.
 State: A six tuple that lists the number of missionaries, cannibals, and boats
 on one side of the river, and then on the second side.
-Goal state: (0,0,0,3,3,1)
+Goal state: (0,0,0,3,3,1) 
 
 (b)
 */
